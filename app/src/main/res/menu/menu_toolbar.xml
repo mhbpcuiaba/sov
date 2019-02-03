@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="@string/menu_buscar" android:id="@+id/resume" app:showAsAction="always"
+        android:icon="@drawable/resume"
+        />
+    <item android:title="Perfil" android:id="@+id/profile_menu" />
+    <item android:title="@string/menu_sobre" android:id="@+id/about_menu" />
+</menu>

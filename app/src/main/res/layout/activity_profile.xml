@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activemodel.profile.ProfileActivity">
+
+
+    <LinearLayout android:id="@+id/base"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/info_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorAccent"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp"
+            app:cardUseCompatPadding="true"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_margin="6dp"
+                >
+
+                <TextView
+                    android:id="@+id/section_label123"
+                    android:layout_width="match_parent"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="3dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:text="Perfil"  />
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txt_layout_nickname"
+                    android:layout_width="match_parent"
+                    android:layout_height="89dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_layout_nicknamel"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:passwordToggleEnabled="true">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edt_nickname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nickname"
+                        />
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txt_layout_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="89dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_layout_email"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:passwordToggleEnabled="true">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edt_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="E-mail"
+                        android:inputType="phone"
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txt_layout_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="89dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_layout_mobile"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:passwordToggleEnabled="true">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edt_mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Celular"
+                        android:inputType="phone"
+                         />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txt_layout_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="89dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="15"
+                    app:layout_constraintBottom_toTopOf="@+id/txt_layout_password_confirmation"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_layout_email"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:passwordToggleEnabled="true">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edt_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Senha Nova"
+                        android:inputType="textPassword"
+                        android:maxLength="15" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/txt_layout_password_confirmation"
+                    android:layout_width="match_parent"
+                    android:layout_height="86dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="15"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_submit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:passwordToggleEnabled="true">
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/edt_password_confirmation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Confirme Senha Nova"
+                        android:inputType="textPassword"
+                        android:maxLength="15" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <TextView
+                    android:id="@+id/txt_avatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Avatar"  />
+
+
+                <LinearLayout
+                    android:id="@+id/layout_button"
+                    android:orientation="horizontal"
+                    android:layout_alignParentTop="true"
+                    android:weightSum="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <Button
+                        android:id="@+id/btnChoose"
+                        android:text="Escolha seu avatar"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:id="@+id/btnUpload"
+                        android:text="Enviar"
+                        android:layout_weight="1"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

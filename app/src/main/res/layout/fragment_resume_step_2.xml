@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout android:id="@+id/dasd"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/info_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="7dp"
+                android:background="@color/colorAccent"
+                app:cardCornerRadius="2dp"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_margin="8dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/section_label123"
+                        android:layout_width="match_parent"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="4dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:text="Formação"  />
+
+                    <CheckBox
+                        android:id="@+id/checkBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tem ensino superior?"
+                        tools:layout_editor_absoluteX="34dp"
+                        tools:layout_editor_absoluteY="266dp" />
+
+                    <TextView
+                        android:id="@+id/graduationLb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Graduação"  />
+
+                    <EditText
+                        android:id="@+id/graduationEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/graduationStatusLb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Status"  />
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/graduationInstitutionLb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Instituição"  />
+
+                    <Spinner
+                        android:id="@+id/spinnerInstitution"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <TextView
+                        android:id="@+id/graduationCourseLb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Curso"  />
+
+                    <Spinner
+                        android:id="@+id/spinnerCourse"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <TextView
+                        android:id="@+id/graduationStartLb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Inicio da Graduação"  />
+
+                    <EditText
+                        android:id="@+id/graduationStartEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/graduationEndLb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Término da Graduação"  />
+
+                    <EditText
+                        android:id="@+id/graduationSEndEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        />
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

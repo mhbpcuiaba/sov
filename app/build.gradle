@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.2'
+    defaultConfig {
+        applicationId "br.com.mhbpit.sov"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            postprocessing {
+                removeUnusedCode false
+                removeUnusedResources false
+                obfuscate false
+                optimizeCode false
+                proguardFile 'proguard-rules.pro'
+            }
+        }
+    }
+    sourceSets {
+        androidTest.java.srcDirs += "src/test-common/java"
+        test.java.srcDirs += "src/test-common/java"
+    }
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.google.firebase:firebase-auth:11.8.0'
+    implementation 'com.google.firebase:firebase-database:11.8.0'
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    //androidTestCompile "org.mockito:mockito-android:2.7.19"
+    testImplementation 'junit:junit:4.12'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:' + rootProject.supportLibraryVersion
+    implementation 'com.android.support:recyclerview-v7:' + rootProject.supportLibraryVersion
+    implementation 'com.android.support:cardview-v7:' + rootProject.supportLibraryVersion
+    implementation 'com.android.support:design:' + rootProject.supportLibraryVersion
+    implementation 'com.android.support:support-v13:' + rootProject.supportLibraryVersion
+
+    implementation 'com.android.support.constraint:constraint-layout:' + rootProject.constraintLayoutVersion
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+//    implementation 'android.arch.lifecycle:extensions:' + rootProject.lifecycleVersion
+//    annotationProcessor 'android.arch.lifecycle:compiler:' + rootProject.lifecycleVersion
+//
+//    implementation 'android.arch.persistence.room:runtime:' + rootProject.roomVersion
+//    annotationProcessor 'android.arch.persistence.room:compiler:' + rootProject.roomVersion
+//
+//    implementation 'com.google.dagger:dagger:' + rootProject.daggerVersion
+//    annotationProcessor 'com.google.dagger:dagger-compiler:' + rootProject.daggerVersion
+
+
+    implementation 'com.squareup.retrofit2:retrofit:' + rootProject.retrofitVersion
+    implementation 'com.squareup.retrofit2:converter-moshi:' + rootProject.retrofitVersion
+    implementation 'com.squareup.moshi:moshi:1.5.0'
+
+
+    implementation 'com.pkmmte.pkrss:pkrss:1.2'
+    implementation 'com.squareup.okhttp:okhttp:1.6.0'
+    implementation 'com.squareup.okhttp:okhttp-urlconnection:1.6.0'
+}
+
+apply plugin: 'com.google.gms.google-services'
