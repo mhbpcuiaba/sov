@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 
 
     val mAuth = FirebaseAuth.getInstance()
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override public fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btn_login.setOnClickListener {
@@ -44,14 +44,14 @@ class MainActivity : AppCompatActivity() {
         if (!txt_layout_password.isErrorEnabled && !txt_layout_email.isErrorEnabled) {
             val password = edt_password.text?.toString()
             val email = edt_email.text?.toString()
-//            mAuth.signInWithEmailAndPassword(email!!, password!!).addOnCompleteListener {
-//                if (it.isSuccessful) {
-//                    val intent = Intent(this, HomeActivity::class.java)
-//                    startActivity(intent)
-//                } else {
-//                    Toast.makeText(this, "Login ou senha inválido!", Toast.LENGTH_LONG).show()
-//                }
-//            }
+            mAuth.signInWithEmailAndPassword(email!!, password!!).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Login ou senha inválido!", Toast.LENGTH_LONG).show()
+                }
+            }
 
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)

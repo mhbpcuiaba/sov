@@ -16,7 +16,7 @@ class SignupActivity : AppCompatActivity() {
 
     val mAuth = FirebaseAuth.getInstance()
     lateinit var mDatabase: DatabaseReference
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override public fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
         mDatabase = FirebaseDatabase.getInstance().getReference("Usuarios")
@@ -78,20 +78,23 @@ class SignupActivity : AppCompatActivity() {
                 Toast.makeText(this, "submeteu os dados para firebase", Toast.LENGTH_LONG).show()
 
                 try {
-                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, {
+                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this@SignupActivity, {
                         task ->
                         Log.i("register_firebase","chegou resposta do firebase")
-                        Toast.makeText(this, "resposta do firebase", Toast.LENGTH_LONG).show()
+                        Toast.makeText(this@SignupActivity, "resposta do firebase taki", Toast.LENGTH_LONG).show()
                         if ( task.isSuccessful) {
                             Log.i("register_firebase","sucesso registro firebase")
                             val user = mAuth.currentUser
                             val uid = user!!.uid.toString()
                             mDatabase.child(uid).child("Usuario")
                                     .setValue(email)
-                            Toast.makeText(this, " Successfully signed in :)", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@SignupActivity, " Successfully signed in :)", Toast.LENGTH_LONG).show()
                         } else {
-                            Log.i("register_firebase","falha registro firebase")
-                            Toast.makeText(this, "Erro ao tentar efetuar o cadastro. Entre em contato com o suporte. 8765-0987, result: " + task.result.toString(), Toast.LENGTH_LONG).show();
+
+                            Log.i("register_firebase","falha registro firebase-INIT2: ")
+//                            Log.i("register_firebase", task.getResult().user.email)
+                            Log.i("register_firebase","falha registro firebase-END2: ")
+                            Toast.makeText(this@SignupActivity, "Erro ao tentar efetuar o cadastro. Entre em contato com o suporte. 8765-0987, result: " + task.getException()?.message, Toast.LENGTH_LONG).show();
                         }
 
 
