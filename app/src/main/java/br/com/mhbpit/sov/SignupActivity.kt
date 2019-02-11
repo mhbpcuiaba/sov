@@ -8,18 +8,20 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_signup.*
 
 class SignupActivity : AppCompatActivity() {
 
     val mAuth = FirebaseAuth.getInstance()
-    lateinit var mDatabase: DatabaseReference
+//    lateinit var mDatabase: DatabaseReference
+    val db = FirebaseFirestore.getInstance()
     override public fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
-        mDatabase = FirebaseDatabase.getInstance().getReference("Usuarios")
+
+//        mDatabase = FirebaseDatabase.getInstance().getReference("Usuarios")
+
         btn_submit.setOnClickListener{
             register()
         }
@@ -86,8 +88,20 @@ class SignupActivity : AppCompatActivity() {
                             Log.i("register_firebase","sucesso registro firebase")
                             val user = mAuth.currentUser
                             val uid = user!!.uid.toString()
-                            mDatabase.child(uid).child("Usuario")
-                                    .setValue(email)
+                            //cria um usuario dda collections usuarios fo firebase cloud firestore
+                            val userFS = HashMap<String, Any>()
+                            userFS["uid"] = uid;
+                            userFS["email"] = user!!.email.toString();
+
+                            db.collection("usuarios")
+                                    .add(userFS)
+                                    .addOnSuccessListener { documentReference ->
+                                        Log.d("_FIRESTORE_", "DocumentSnapshot added with ID: " + documentReference.id)
+                                    }
+                                    .addOnFailureListener { e ->
+                                        Log.w("_FIRESTORE_", "Error adding document", e)
+                                    }
+
                             Toast.makeText(this@SignupActivity, " Successfully signed in :)", Toast.LENGTH_LONG).show()
                         } else {
 
