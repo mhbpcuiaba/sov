@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import br.com.mhbpit.sov.activemodel.home.HomeActivity
+import br.com.mhbpit.sov.util.SaveSharedPreference
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -23,6 +24,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        if (SaveSharedPreference.getLoggedStatus(applicationContext)) {
+            val intent = Intent(applicationContext, HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun validateForm() {
@@ -46,19 +51,33 @@ class MainActivity : AppCompatActivity() {
             val email = edt_email.text?.toString()
             mAuth.signInWithEmailAndPassword(email!!, password!!).addOnCompleteListener {
                 if (it.isSuccessful) {
+                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true, it.result!!.user.uid);
                     val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this, "Login ou senha inválido!", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Login ou senha inválido!", Toast.LENGTH_SHORT).show()
                 }
             }
-
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //https://material.io/guidelines/style/color.html#color-color-palette
 //https://material.io/color/#!/?view.left=0&view.right=1&primary.color=8BC34A&secondary.color=689F38&primary.text.color=000000

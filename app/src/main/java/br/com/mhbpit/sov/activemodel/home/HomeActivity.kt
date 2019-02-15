@@ -10,9 +10,13 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import br.com.mhbpit.sov.MainActivity
 import br.com.mhbpit.sov.R
+import br.com.mhbpit.sov.activemodel.AboutActivity
 import br.com.mhbpit.sov.activemodel.profile.ProfileActivity
 import br.com.mhbpit.sov.activemodel.resume.ResumeActivity
+import br.com.mhbpit.sov.util.SaveSharedPreference
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_home.view.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -23,6 +27,8 @@ import kotlinx.android.synthetic.main.toolbar.*
 //https://github.com/googlesamples/android-architecture-components/tree/master/PagingWithNetworkSample
 //class HomeActivity : AppCompatActivity() {
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    val mAuth = FirebaseAuth.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,14 +95,24 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         if(item?.itemId == R.id.about_menu) {
-            Toast.makeText(this, "vc clicou no menu item Sobre", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, AboutActivity::class.java)
+            startActivity(intent)
+
         }
 
         if (item?.itemId == R.id.menu_resume) {
             val intent = Intent(this, ResumeActivity::class.java)
             startActivity(intent)
-
         }
+
+        if (item?.itemId == R.id.logout_menu) {
+            mAuth.signOut()
+            SaveSharedPreference.setLoggedIn(getApplicationContext(), false);
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
+
 
         return super.onOptionsItemSelected(item)
     }

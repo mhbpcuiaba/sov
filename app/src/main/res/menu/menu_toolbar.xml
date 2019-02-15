@@ -7,4 +7,5 @@
         />
     <item android:title="Perfil" android:id="@+id/profile_menu" />
     <item android:title="@string/menu_sobre" android:id="@+id/about_menu" />
+    <item android:title="Logout" android:id="@+id/logout_menu" />
 </menu>

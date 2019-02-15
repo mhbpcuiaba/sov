@@ -25,7 +25,8 @@
             android:name=".activemodel.resume.ResumeActivity"
             android:label="@string/title_activity_resume"
             android:theme="@style/SuperMaterialTheme" />
-        <activity android:name=".activemodel.profile.ProfileActivity"></activity>
+        <activity android:name=".activemodel.profile.ProfileActivity" />
+        <activity android:name=".activemodel.AboutActivity"></activity>
     </application>
 
 </manifest>
