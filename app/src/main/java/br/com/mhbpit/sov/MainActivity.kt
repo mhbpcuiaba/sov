@@ -9,10 +9,18 @@ import br.com.mhbpit.sov.util.SaveSharedPreference
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
+
+/*
+   area administrativa
+    - crud admin
+    - crud instituicao { cursos: [] }
+
+
+ */
 class MainActivity : AppCompatActivity() {
 
-
     val mAuth = FirebaseAuth.getInstance()
+
     override public fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -51,6 +59,7 @@ class MainActivity : AppCompatActivity() {
             val email = edt_email.text?.toString()
             mAuth.signInWithEmailAndPassword(email!!, password!!).addOnCompleteListener {
                 if (it.isSuccessful) {
+
                     SaveSharedPreference.setLoggedIn(getApplicationContext(), true, it.result!!.user.uid);
                     val intent = Intent(this, HomeActivity::class.java)
                     startActivity(intent)

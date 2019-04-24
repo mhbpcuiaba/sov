@@ -61,10 +61,15 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
-//    implementation 'android.arch.lifecycle:extensions:' + rootProject.lifecycleVersion
+    implementation 'android.arch.lifecycle:extensions:' + rootProject.lifecycleVersion
+//    implementation 'android.arch.lifecyle:viewmodel:' + rootProject.roomVersion
+//    implementation 'android.arch.lifecyle:livedata:' + rootProject.roomVersion
+//    implementation 'android.arch.lifecyle:runtime:' + rootProject.roomVersion
+//    implementation 'android.arch.lifecyle:compiler:' + rootProject.roomVersion
+//    implementation 'android.arch.lifecyle:reactivestream:' + rootProject.roomVersion
+
 //    annotationProcessor 'android.arch.lifecycle:compiler:' + rootProject.lifecycleVersion
 //
-//    implementation 'android.arch.persistence.room:runtime:' + rootProject.roomVersion
 //    annotationProcessor 'android.arch.persistence.room:compiler:' + rootProject.roomVersion
 //
 //    implementation 'com.google.dagger:dagger:' + rootProject.daggerVersion

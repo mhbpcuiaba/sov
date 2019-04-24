@@ -36,5 +36,9 @@ class SaveSharedPreference {
         fun getLoggedStatus(context: Context): Boolean {
             return getPreferences(context).getBoolean(LOGGED_IN_PREF, false)
         }
+
+        fun getUserUID(context: Context): String {
+            return getPreferences(context).getString(USER_UID, "")
+        }
     }
 }

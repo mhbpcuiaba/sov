@@ -69,28 +69,6 @@
                         />
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
-                    android:id="@+id/txt_layout_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="89dp"
-                    app:counterEnabled="true"
-                    app:counterMaxLength="15"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_layout_email"
-                    app:layout_constraintVertical_bias="1.0"
-                    app:passwordToggleEnabled="true">
-
-                    <android.support.v7.widget.AppCompatEditText
-                        android:id="@+id/edt_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="E-mail"
-                        android:inputType="phone"
-                        />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
                     android:id="@+id/txt_layout_mobile"
                     android:layout_width="match_parent"
                     android:layout_height="89dp"
@@ -110,51 +88,6 @@
                         android:hint="Celular"
                         android:inputType="phone"
                          />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/txt_layout_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="89dp"
-                    app:counterEnabled="true"
-                    app:counterMaxLength="15"
-                    app:layout_constraintBottom_toTopOf="@+id/txt_layout_password_confirmation"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_layout_email"
-                    app:layout_constraintVertical_bias="1.0"
-                    app:passwordToggleEnabled="true">
-
-                    <android.support.v7.widget.AppCompatEditText
-                        android:id="@+id/edt_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Senha Nova"
-                        android:inputType="textPassword"
-                        android:maxLength="15" />
-                </android.support.design.widget.TextInputLayout>
-
-
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/txt_layout_password_confirmation"
-                    android:layout_width="match_parent"
-                    android:layout_height="86dp"
-                    app:counterEnabled="true"
-                    app:counterMaxLength="15"
-                    app:layout_constraintBottom_toTopOf="@+id/btn_submit"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:passwordToggleEnabled="true">
-
-                    <android.support.v7.widget.AppCompatEditText
-                        android:id="@+id/edt_password_confirmation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Confirme Senha Nova"
-                        android:inputType="textPassword"
-                        android:maxLength="15" />
                 </android.support.design.widget.TextInputLayout>
 
 
@@ -185,7 +118,7 @@
                         android:layout_height="wrap_content" />
 
                     <Button
-                        android:id="@+id/btnUpload"
+                        android:id="@+id/btnSave"
                         android:text="Enviar"
                         android:layout_weight="1"
                         android:textColor="@android:color/white"
